@@ -1,0 +1,60 @@
+Name         : kscreen
+Version      : 2.0.0
+Release      : 1
+Group        : System/Base
+License      : LGPLv2.1+
+Summary      : API to control screen settings
+Description  : |
+  API to control screen settings.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - libkscreen-devel
+    - kf5-kdbusaddons-devel
+    - kf5-kconfigwidgets-devel
+    - kf5-ki18n-devel
+    - kf5-kxmlgui-devel
+    - kf5-kglobalaccel-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5X11Extras
+    - Qt5QuickWidgets
+
+Requires:
+    - kf5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING COPYING.LGPL"
+    - "%{_kf5_bindir}/kscreen-console"
+    - "%{_kf5_datadir}/icons/*"
+    - "%{_kf5_datadir}/kservices5/*"
+    - "%{_qt5_plugindir}/kcm_kscreen.so"
+    - "%{_qt5_plugindir}/kded_kscreen.so"
+    - "%{_kf5_datadir}/kcm_kscreen"
