@@ -33,11 +33,11 @@ BuildRequires:  pkgconfig(Qt5QuickWidgets)
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  libkscreen-devel
-BuildRequires:  kf5-kdbusaddons-devel
-BuildRequires:  kf5-kconfigwidgets-devel
-BuildRequires:  kf5-ki18n-devel
-BuildRequires:  kf5-kxmlgui-devel
-BuildRequires:  kf5-kglobalaccel-devel
+BuildRequires:  kdbusaddons-devel
+BuildRequires:  kconfigwidgets-devel
+BuildRequires:  ki18n-devel
+BuildRequires:  kxmlgui-devel
+BuildRequires:  kglobalaccel-devel
 
 %description
 API to control screen settings.
@@ -72,10 +72,9 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc COPYING COPYING.LGPL
 %{_kf5_bindir}/kscreen-console
-%{_kf5_datadir}/icons/*
-%{_kf5_datadir}/kservices5/*
-%{_qt5_plugindir}/kcm_kscreen.so
-%{_qt5_plugindir}/kded_kscreen.so
-%{_kf5_datadir}/kcm_kscreen
+%{_kf5_iconsdir}/*
+%{_kf5_servicesdir}/*
+%{_kf5_plugindir}/*
+%{_kf5_sharedir}/kcm_kscreen
 # >> files
 # << files

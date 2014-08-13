@@ -25,11 +25,11 @@ PkgBR:
     - kf5-rpm-macros
     - extra-cmake-modules
     - libkscreen-devel
-    - kf5-kdbusaddons-devel
-    - kf5-kconfigwidgets-devel
-    - kf5-ki18n-devel
-    - kf5-kxmlgui-devel
-    - kf5-kglobalaccel-devel
+    - kdbusaddons-devel
+    - kconfigwidgets-devel
+    - ki18n-devel
+    - kxmlgui-devel
+    - kglobalaccel-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -53,8 +53,7 @@ RequiresPostUn:
 Files:
     - "%doc COPYING COPYING.LGPL"
     - "%{_kf5_bindir}/kscreen-console"
-    - "%{_kf5_datadir}/icons/*"
-    - "%{_kf5_datadir}/kservices5/*"
-    - "%{_qt5_plugindir}/kcm_kscreen.so"
-    - "%{_qt5_plugindir}/kded_kscreen.so"
-    - "%{_kf5_datadir}/kcm_kscreen"
+    - "%{_kf5_iconsdir}/*"
+    - "%{_kf5_servicesdir}/*"
+    - "%{_kf5_plugindir}/*"
+    - "%{_kf5_sharedir}/kcm_kscreen"
